@@ -321,17 +321,6 @@ function renderChart(canvasId, data) {
 document.addEventListener('DOMContentLoaded', function() {
     createInputElements();
     updatePlots(); // Run initial simulations and render plots
-}); // <- This is where your event listener function should end.
-
-/* Assuming `results` object exists and has the property `purchasePrices`
-   You might need to move this inside the `updatePlots` or a relevant function where `results` is available.
-const irrData = {
-    labels: results.purchasePrices,
-    datasets: [{ // ... dataset for IRR }]
-};
-renderPlot('favorablePlot', favorableData, { // ... options });
-renderPlot('irrPlot', irrData, { // ... options });
-*/
 
     // Add event listeners to inputs
     const inputs = ['savingsAmount', 'interestRate', 'downPaymentPercentage', 'closingCostPercentage', 'additionalUpfrontCosts', 'annualBaseIncome', 'annualBaseExpense', 'additionalAnnualIncome', 'additionalAnnualCosts', 'propertyGrowthRate', 'inflationRate', 'years', 'targetIRR'];
@@ -344,17 +333,7 @@ renderPlot('irrPlot', irrData, { // ... options });
     });
 });
 
+// Helper function to create a range of numbers
 function range(start, stop, step) {
     return Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    const inputs = ['savingsAmount', 'interestRate', 'downPaymentPercentage', 'closingCostPercentage', 'additionalUpfrontCosts', 'annualBaseIncome', 'annualBaseExpense', 'additionalAnnualIncome', 'additionalAnnualCosts', 'propertyGrowthRate', 'inflationRate', 'years', 'targetIRR'];
-    inputs.forEach(inputId => {
-        document.getElementById(inputId).addEventListener('input', handleInputChange);
-    });
-
-document.addEventListener('DOMContentLoaded', function() {
-    createInputElements();
-    updatePlots();
-});
