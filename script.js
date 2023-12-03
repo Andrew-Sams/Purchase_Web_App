@@ -321,15 +321,17 @@ function renderChart(canvasId, data) {
 document.addEventListener('DOMContentLoaded', function() {
     createInputElements();
     updatePlots(); // Run initial simulations and render plots
-    
-    // Assuming `results` object exists and has the property `purchasePrices`
-    // You might need to move this inside the `updatePlots` or a relevant function where `results` is available.
-    // const irrData = {
-    //     labels: results.purchasePrices,
-    //     datasets: [{ /* ... dataset for IRR */ }]
-    // };
-    // renderPlot('favorablePlot', favorableData, { /* ... options */ });
-    // renderPlot('irrPlot', irrData, { /* ... options */ });
+}); // <- This is where your event listener function should end.
+
+/* Assuming `results` object exists and has the property `purchasePrices`
+   You might need to move this inside the `updatePlots` or a relevant function where `results` is available.
+const irrData = {
+    labels: results.purchasePrices,
+    datasets: [{ // ... dataset for IRR }]
+};
+renderPlot('favorablePlot', favorableData, { // ... options });
+renderPlot('irrPlot', irrData, { // ... options });
+*/
 
     // Add event listeners to inputs
     const inputs = ['savingsAmount', 'interestRate', 'downPaymentPercentage', 'closingCostPercentage', 'additionalUpfrontCosts', 'annualBaseIncome', 'annualBaseExpense', 'additionalAnnualIncome', 'additionalAnnualCosts', 'propertyGrowthRate', 'inflationRate', 'years', 'targetIRR'];
